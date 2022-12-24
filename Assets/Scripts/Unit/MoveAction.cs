@@ -1,22 +1,19 @@
-//using System.Collections;
-//using System.Collections.Generic;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
-public class Unit : MonoBehaviour
+public class MoveAction : MonoBehaviour
 {
+    private Vector3 targetPosition;
+
     [SerializeField] private Animator unitAnimator;
     private readonly float _moveSpeed = 4f;
     private readonly float _rotateSpeed = 10f;
 
-    private Vector3 targetPosition;
-
-    private void Awake()
-    {
-        targetPosition = transform.position;
+    private void Awake() {
+         targetPosition = transform.position;
     }
-
-    private void Update()
-    {
+    private void Update(){
         float stopingDistance = .1f;
         if (Vector3.Distance(transform.position, targetPosition) > stopingDistance)
         {
@@ -29,10 +26,19 @@ public class Unit : MonoBehaviour
         else
         {
             unitAnimator.SetBool("IsWalking", false);
-        } 
+        }
     }
+
     public void Move(Vector3 targetPosition)
     {
         this.targetPosition = targetPosition;
     }
+
+    public List<GridPosition> GetValidActionGridPositionList(){
+        List<GridPosition> validGridPositionList = new List<GridPosition>();
+
+        return validGridPositionList;
+    }
+
+
 }
