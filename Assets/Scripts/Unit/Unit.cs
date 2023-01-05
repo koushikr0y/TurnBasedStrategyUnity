@@ -3,31 +3,51 @@
 using UnityEngine;
 
 public class Unit : MonoBehaviour
-{   
+{
     private GridPosition gridPosition;
     private MoveAction moveAction;
-    private void Awake() {
+    private SpinAction spinAction;
+    private BaseAction[] baseActionsArray;
+
+    private void Awake()
+    {
         moveAction = GetComponent<MoveAction>();
+        spinAction = GetComponent<SpinAction>();
+        baseActionsArray = GetComponents<BaseAction>();
     }
-    private void Start() {
+    private void Start()
+    {
         gridPosition = LevelGrid.Instance.GetGridPosition(transform.position);
-        LevelGrid.Instance.AddUnitAtGridPosition(gridPosition,this);
+        LevelGrid.Instance.AddUnitAtGridPosition(gridPosition, this);
     }
 
     private void Update()
     {
         GridPosition newGridPosition = LevelGrid.Instance.GetGridPosition(transform.position);
-        if(newGridPosition != gridPosition){
-            LevelGrid.Instance.UnitMoveGridPosition(this,gridPosition,newGridPosition);
+        if (newGridPosition != gridPosition)
+        {
+            LevelGrid.Instance.UnitMoveGridPosition(this, gridPosition, newGridPosition);
             gridPosition = newGridPosition;
         }
     }
-    
-    public MoveAction GetMoveAction(){
+
+    public BaseAction[] GetBaseAction()
+    {
+        return baseActionsArray;
+    }
+
+    public MoveAction GetMoveAction()
+    {
         return moveAction;
     }
 
-    public GridPosition GetGridPosition(){
+    public SpinAction GetSpinAction()
+    {
+        return spinAction;
+    }
+
+    public GridPosition GetGridPosition()
+    {
         return gridPosition;
     }
 

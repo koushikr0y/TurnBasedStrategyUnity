@@ -2,7 +2,7 @@
 //using System.Collections.Generic;
 using UnityEngine;
 
-public class GridSystem 
+public class GridSystem
 {
     private int width;
     private int height;
@@ -20,9 +20,9 @@ public class GridSystem
         for (int x = 0; x < width; x++)
         {
             for (int z = 0; z < height; z++)
-            {   
+            {
                 GridPosition gridPosition = new GridPosition(x, z);
-                gridObjectArray[x,z] = new GridObject(this, gridPosition);
+                gridObjectArray[x, z] = new GridObject(this, gridPosition);
             }
         }
     }
@@ -43,9 +43,9 @@ public class GridSystem
     {
         for (int x = 0; x < width; x++)
         {
-            for(int j = 0; j< height; j++)
+            for (int j = 0; j < height; j++)
             {
-                GridPosition gridPosition = new GridPosition(x,j);
+                GridPosition gridPosition = new GridPosition(x, j);
 
                 Transform debugTransform = GameObject.Instantiate(debugPrefab, GetWorldPosition(gridPosition), Quaternion.identity);
                 GridDebugObject gridDebugObject = debugTransform.GetComponent<GridDebugObject>();
@@ -55,14 +55,19 @@ public class GridSystem
         }
     }
 
-    public GridObject GetGridObject(GridPosition gridPosition){
-        return gridObjectArray[gridPosition.x,gridPosition.z];
+    public GridObject GetGridObject(GridPosition gridPosition)
+    {
+        return gridObjectArray[gridPosition.x, gridPosition.z];
     }
 
-    public bool IsValidGridPosition(GridPosition gridPosition){
-        return gridPosition.x >= 0 && 
-               gridPosition.z >= 0 && 
-               gridPosition.x < width && 
-               gridPosition.z < height; 
+    public bool IsValidGridPosition(GridPosition gridPosition)
+    {
+        return gridPosition.x >= 0 &&
+               gridPosition.z >= 0 &&
+               gridPosition.x < width &&
+               gridPosition.z < height;
     }
+
+    public int GetWidth() { return width; }
+    public int GetHeight() { return height; }
 }
