@@ -29,12 +29,35 @@ public class SpinAction : BaseAction
             onActionComplete();
         }
     }
-    public void Spin(Action onSpinComplete)
+    // public void Spin(Action onSpinComplete)
+    public override void TakeAction(GridPosition gridPosition, Action onActionComplete)
     {
-        this.onActionComplete = onSpinComplete;
+        // this.onActionComplete = onSpinComplete;
+        this.onActionComplete = onActionComplete;
         isActive = true;
         totalSpinAmount = 0f;
     }
 
+    public override string GetActionName()
+    {
+        return "Spin";
+    }
+
+    public override List<GridPosition> GetValidActionGridPositionList()
+    {
+
+       // List<GridPosition> validGridPositionList = new List<GridPosition>();
+
+        GridPosition unitGridPosition = unit.GetGridPosition();
+
+        return new List<GridPosition>{
+            unitGridPosition
+        };
+    }
+
+    public override int GetActionPointCost()
+    {
+        return 2;
+    }
 
 }
