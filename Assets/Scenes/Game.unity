@@ -2182,6 +2182,50 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 1141313617}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1245059556
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1245059558}
+  - component: {fileID: 1245059557}
+  m_Layer: 0
+  m_Name: EnemyAi
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1245059557
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1245059556}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ddbd7e6ebc13e3d428a4e149ad6d2f74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1245059558
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1245059556}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 17
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1430792949
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2404,7 +2448,7 @@ PrefabInstance:
     - target: {fileID: 6617049486943435061, guid: 25a9c38ff5c899d4b85ed369b069298a,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 8
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6617049486943435061, guid: 25a9c38ff5c899d4b85ed369b069298a,
         type: 3}
@@ -2561,6 +2605,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   turnNumberText: {fileID: 2007137955}
   endTurnBtn: {fileID: 23736426}
+  enemyTurnVisual: {fileID: 610425630}
 --- !u!1 &1845630178
 GameObject:
   m_ObjectHideFlags: 0
