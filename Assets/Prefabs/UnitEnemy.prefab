@@ -77,5 +77,11 @@ PrefabInstance:
       propertyPath: isEnemy
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6531547598190263949, guid: 56be9c84bed82354296fbcbb2a2aa318,
+        type: 3}
+      propertyPath: ragadollPrefab
+      value: 
+      objectReference: {fileID: 8420237590174684368, guid: abb636358ddb80346bf2f5675f25760b,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 56be9c84bed82354296fbcbb2a2aa318, type: 3}

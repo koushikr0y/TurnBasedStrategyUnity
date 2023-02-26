@@ -2425,6 +2425,12 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5680496341285200889, guid: 25a9c38ff5c899d4b85ed369b069298a,
+        type: 3}
+      propertyPath: ragadollPrefab
+      value: 
+      objectReference: {fileID: 8420237590174684368, guid: abb636358ddb80346bf2f5675f25760b,
+        type: 3}
     - target: {fileID: 6617049486943435060, guid: 25a9c38ff5c899d4b85ed369b069298a,
         type: 3}
       propertyPath: m_Name
@@ -2453,7 +2459,7 @@ PrefabInstance:
     - target: {fileID: 6617049486943435061, guid: 25a9c38ff5c899d4b85ed369b069298a,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6617049486943435061, guid: 25a9c38ff5c899d4b85ed369b069298a,
         type: 3}
@@ -2463,7 +2469,7 @@ PrefabInstance:
     - target: {fileID: 6617049486943435061, guid: 25a9c38ff5c899d4b85ed369b069298a,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6617049486943435061, guid: 25a9c38ff5c899d4b85ed369b069298a,
         type: 3}
@@ -2478,7 +2484,7 @@ PrefabInstance:
     - target: {fileID: 6617049486943435061, guid: 25a9c38ff5c899d4b85ed369b069298a,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: 180
       objectReference: {fileID: 0}
     - target: {fileID: 6617049486943435061, guid: 25a9c38ff5c899d4b85ed369b069298a,
         type: 3}

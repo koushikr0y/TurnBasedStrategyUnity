@@ -5,6 +5,11 @@ using UnityEngine;
 
 public class ShootAction : BaseAction
 {
+    public event EventHandler<OnShootEventArgs> OnShoot;
+    public class OnShootEventArgs : EventArgs {
+        public Unit targetUnit;
+        public Unit shootingUnit;
+    }
 
     private enum STATE
     {
@@ -16,11 +21,11 @@ public class ShootAction : BaseAction
 
     private float stateTimer;
     private int maxShootDistance = 7;
+    private int shootDamage = 40;
     private Unit targetUnit;
 
     private bool canShootBullet;
 
-    public event EventHandler OnShoot;
     private void Update()
     {
         if (!isActive) { return; }
@@ -75,8 +80,9 @@ public class ShootAction : BaseAction
 
     private void Shoot()
     {
-        OnShoot?.Invoke(this, EventArgs.Empty);
-        targetUnit.Damage();
+        OnShoot?.Invoke(this, new OnShootEventArgs { targetUnit = targetUnit,
+        shootingUnit = unit});
+        targetUnit.Damage(shootDamage);
     }
     public override string GetActionName()
     {
